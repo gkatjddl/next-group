@@ -1,0 +1,40 @@
+.headerContainer img{
+    height: 100px;
+    width: 100px;
+}
+
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1152px;
+    margin: auto;
+    height: 150px;
+    padding: 15px 25px;
+}
+
+.headerContainer .active{
+    color: orange;
+}
+
+.nav{
+    display: flex; /* Flexbox 컨테이너로 설정 */
+    list-style-type: none; /* 목록 스타일 제거 */
+    padding: 0; /* padding 제거 */
+}
+
+.nav li{
+    color: white;
+    margin-right: 20px; /* 각 항목 사이의 간격 설정 */
+    list-style-type: none;
+}
+
+@media (max-width:768px){
+    .headerContainer{
+      max-width: 680px;
+    }
+  
+    .headerContainer ul{
+      gap:1.6rem;
+    }
+  }
