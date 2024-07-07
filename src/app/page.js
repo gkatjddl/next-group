@@ -10,7 +10,7 @@ export default function Home() {
    <div>
       <header className={styles.header}>
         <div className={styles.slideshow}>
-          <ImageSlider/>
+          <ImageSlider label="사진" nmae="image"/>
           </div>
         <div className={styles.hero}>
           <h1>우리동아리 홈페이지</h1>

@@ -7,14 +7,14 @@ export default function ActivitiesGrid({activitise}){
     return(
         <div>
             <ul className={styles.activities}>
-            {
-                activitise.map((item, index)=>{
-                    return(
-                        <li key={item._id}>
-                            <ActivitiesItem {...item}/>
-                        </li>
-                    )
-                })
+                {
+                    activitise.map((item, index)=>{
+                        return(
+                            <li key={item._id}>
+                                <ActivitiesItem {...item}/>
+                            </li>
+                        )
+                    })
             }
             </ul>
         </div>

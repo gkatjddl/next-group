@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import styles from './activites-item.module.css'
-import Link from 'next/link'
+import Image from 'next/image';
+import styles from './activites-item.module.css';
+import Link from 'next/link';
 
-export default function ActivitiesItem({_id,title,slug,image,summary,content,creator,creator_email}){
+export default function ActivitiesItem({_id, title, slug, image, summary, content, creator, creator_email}){
     return(
         <div className={styles.activities}>
             <header className={styles.imgHeader}>
@@ -10,16 +10,16 @@ export default function ActivitiesItem({_id,title,slug,image,summary,content,cre
                     <Image src={image} alt={title} fill/>
                 </div>
             </header>
-            <header className={styles.headerText}>
+            <div className={styles.headerText}>
                 <h2>{title}</h2>
                 <p>작성자: {creator}</p>
-            </header>
-            <header className={styles.content}>
-                    <p className={styles.summary}>{summary}</p>
-                    <div className={styles.actions}>
-                        <Link href={`/group/${_id}`}>자세히보기</Link>
-                    </div>
-            </header>
+            </div>
+            <div className={styles.content}>
+                <p className={styles.summary}>{summary}</p>
+                <div className={styles.actions}>
+                    <Link href={`/group/${_id}`}>자세히 보기</Link>
+                </div>
+            </div>
         </div>
     )
 }

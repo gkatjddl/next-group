@@ -2,7 +2,7 @@ import { connectDB } from "@/util/db"
 import { ObjectId } from "mongodb";
 import styles from './page.module.css';
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default async function GroupPostPage({params}){
 
@@ -11,7 +11,8 @@ export default async function GroupPostPage({params}){
     const db = (await connectDB).db('mydb');
     const activity = await db.collection('group').findOne({_id:ObjectId.createFromHexString(params.slug)});
     console.log(activity);
-    activity.content = activity.content.replace(/\n/g,  '<br>')
+    // 줄바꿈 문자열이 반영이 안되니깐 '<br/>' 로 대체한다
+    activity.content = activity.content.replace(/\n/g, '<br/>')
 
     return(
         <div>
@@ -30,8 +31,8 @@ export default async function GroupPostPage({params}){
                 </div>
             </header>
             <main>
-                <p dangerouslySetInnerHTML={{__html:activity.content}} className={styles.content}></p> 
-                <Link href='/group'>이전</Link>
+                <p dangerouslySetInnerHTML={{__html:activity.content}} className={styles.content}>
+                </p>
             </main>
         </div>
     )
